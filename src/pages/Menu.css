@@ -1,0 +1,17 @@
+.menu-page header{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../resources/images/menu-img.webp);
+    background-position: top;
+    height: 50vh;
+}
+
+.nav-links {
+    display: inline-block;
+    height: 20px;
+    background-color:white;/*will change background-color of element */
+    color: green; /*will change color of text within the element */
+}
+    
+.nav-links:hover {
+    background-color:green; /*will change background-color of element on hover */
+    color: white; /*will change color of text within the element on hover */
+ }

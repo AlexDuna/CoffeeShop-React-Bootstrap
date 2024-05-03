@@ -11,7 +11,7 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <div >
-      <Navbar expand="lg" className='fixed-top bg-body-tertiary-shadow'>
+      <Navbar expand="lg" className='fixed-top bg-body-tertiary-shadow bg-light'>
         <Container>
           <Navbar.Brand>
             <Link to="/" className='navbar-brand text-success text-black fw-semibold'>
