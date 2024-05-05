@@ -22,18 +22,18 @@ function App() {
           <Navbar.Collapse if='basic-navbar-nav'>
           <Nav className='me-auto justify-content-end w-100'>
           <Nav.Link as={Link} to='/' className='nav-link text-uppercase text-black'>Home</Nav.Link>
-              <Nav.Link as={Link} to='/menu' className='nav-link text-uppercase text-black'>Menu</Nav.Link>
-              <Nav.Link as={Link} to='/about' className='nav-link text-uppercase text-black'>About</Nav.Link>
-              <Nav.Link as={Link} to='/contact' className='nav-link text-uppercase text-black'>Contact</Nav.Link>
+              <Nav.Link as={Link} to='/Menu' className='nav-link text-uppercase text-black'>Menu</Nav.Link>
+              <Nav.Link as={Link} to='/About' className='nav-link text-uppercase text-black'>About</Nav.Link>
+              <Nav.Link as={Link} to='/Contact' className='nav-link text-uppercase text-black'>Contact</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
     <Routes>
       <Route path='/' element={<Home />}/>
-      <Route path='/menu' element={<Menu />}/>
-      <Route path='/about' element={<About />}/>
-      <Route path='/contact' element={<Contact />}/>
+      <Route path='/Menu' element={<Menu />}/>
+      <Route path='/About' element={<About />}/>
+      <Route path='/Contact' element={<Contact />}/>
     </Routes>
 
     <footer className='bg-body-tertiary'>
