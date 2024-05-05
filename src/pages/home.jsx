@@ -1,6 +1,5 @@
 import React from 'react';
 import { MenuButton } from '../components/MenuButton';
-import Menu from './Menu';
 import './Home.css';
 import AboutImg from '../resources/images/about-img.jpg';
 import { Link } from 'react-router-dom';
@@ -139,6 +138,7 @@ Te invităm să ne vizitezi și să te bucuri de experiența noastră unica la A
                     </div>
                 </div>
             </div>
+
         </div>
     )
 }

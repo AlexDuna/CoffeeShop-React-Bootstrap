@@ -31,6 +31,11 @@ img{
     border-width: 5px;
 }
 
+.nav-links:hover {
+    background-color:green; /*will change background-color of element on hover */
+    color: white; /*will change color of text within the element on hover */
+    }
+
 @media only screen and (max-width: 768px){
     header h1{
         font-size: 4rem;

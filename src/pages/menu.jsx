@@ -3,12 +3,11 @@ import './Menu.css';
 import {Card, CardBody, CardText, CardTitle} from 'react-bootstrap';
 import BlackCoffeeImg from '../resources/images/blackcoffee-img.jpg';
 import MilkCoffeeImg from '../resources/images/milkcoffee-img.jpg';
-import OriginalCoffeeImg from '../resources/images/originalcoffee-img.jpg';
+import OriginalCoffeeImg from '../resources/images/originalcoffee-img.webp';
 import TeaImg from '../resources/images/tea-img.jpg';
 import LemonadeImg from '../resources/images/lemonademenu-img.jpg';
 import SmoothieImg from '../resources/images/smoothiemenu-img.jpg';
 import MilkShakeImg from '../resources/images/milkshake-img.avif';
-import { Link } from 'react-router-dom';
 
 const blackcoffee = [
     {
@@ -239,9 +238,6 @@ function Menu(){
                 <div className='container'>
                     <h2 className='text-left fs-1 mb-4 mb-lg-5 text-uppercase fw-bold text-secondary'>Black Coffee</h2>
                     <div className='row flex-column-reverse flex-lg-row'>
-                    <div className='col-lg-6 d-flex justify-content-left'>
-                            <img src={BlackCoffeeImg} className='img-fluid mt-0 mt-lg-0' alt="" />
-                        </div>
                         <div className='col-lg-6 d-flex flex-column justify-content-around'>
                             {blackcoffee.map((blackcoffee)=> (
                                 <div key={blackcoffee.id}>
@@ -260,6 +256,9 @@ function Menu(){
                                     </Card>
                                 </div>
                             ))}
+                        </div>
+                        <div className='col-lg-6 d-flex justify-content-left'>
+                            <img src={BlackCoffeeImg} className='img-fluid mt-0 mt-lg-0' alt="" />
                         </div>
                     </div>
                 </div>    
@@ -313,9 +312,6 @@ function Menu(){
                 <div className='container'>
                     <h2 className='text-left fs-1 mb-4 mb-lg-5 text-uppercase fw-bold text-secondary'>Original Coffee</h2>
                     <div className='row flex-column-reverse flex-lg-row'>
-                    <div className='col-lg-6 d-flex justify-content-left'>
-                            <img src={OriginalCoffeeImg} className='img-fluid mt-0 mt-lg-0' alt="" />
-                        </div>
                         <div className='col-lg-6 d-flex flex-column justify-content-around'>
                             {originalcoffee.map((originalcoffee)=> (
                                 <div key={originalcoffee.id}>
@@ -335,6 +331,9 @@ function Menu(){
                                 </div>
                             ))}
                         </div>
+                        <div className='col-lg-6 d-flex justify-content-left'>
+                            <img src={OriginalCoffeeImg} className='img-fluid mt-0 mt-lg-0' alt="" />
+                        </div>
                     </div>
                 </div>    
             </div>
@@ -346,7 +345,7 @@ function Menu(){
                 borderColor: 'black',
                 height: '5px'}}/>
 
-            <div className='tea my-5'>
+            <div className='tea my-5 bg'>
                 <div className='container'>
                     <h2 className='text-left fs-1 mb-4 mb-lg-5 text-uppercase fw-bold text-secondary'>Tea</h2>
                     <div className='row flex-column-reverse flex-lg-row'>
@@ -387,9 +386,6 @@ function Menu(){
                 <div className='container'>
                     <h2 className='text-left fs-1 mb-4 mb-lg-5 text-uppercase fw-bold text-secondary'>Lemonade</h2>
                     <div className='row flex-column-reverse flex-lg-row'>
-                    <div className='col-lg-6 d-flex justify-content-left'>
-                            <img src={LemonadeImg} className='img-fluid mt-0 mt-lg-0' alt="" />
-                        </div>
                         <div className='col-lg-6 d-flex flex-column justify-content-around'>
                             {lemonade.map((lemonade)=> (
                                 <div key={lemonade.id}>
@@ -408,6 +404,9 @@ function Menu(){
                                     </Card>
                                 </div>
                             ))}
+                        </div>
+                        <div className='col-lg-6 d-flex justify-content-left'>
+                            <img src={LemonadeImg} className='img-fluid mt-0 mt-lg-0' alt="" />
                         </div>
                     </div>
                 </div>    
@@ -461,9 +460,6 @@ function Menu(){
                 <div className='container'>
                     <h2 className='text-left fs-1 mb-4 mb-lg-5 text-uppercase fw-bold text-secondary'>Milkshakes</h2>
                     <div className='row flex-column-reverse flex-lg-row'>
-                    <div className='col-lg-6 d-flex justify-content-left'>
-                            <img src={MilkShakeImg} className='img-fluid mt-0 mt-lg-0' alt="" />
-                        </div>
                         <div className='col-lg-6 d-flex flex-column justify-content-around'>
                             {milkshake.map((milkshake)=> (
                                 <div key={milkshake.id}>
@@ -482,6 +478,9 @@ function Menu(){
                                     </Card>
                                 </div>
                             ))}
+                        </div>
+                        <div className='col-lg-6 d-flex justify-content-left'>
+                            <img src={MilkShakeImg} className='img-fluid mt-0 mt-lg-0' alt="" />
                         </div>
                     </div>
                 </div>    

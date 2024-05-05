@@ -20,11 +20,11 @@ function App() {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav'/>
           <Navbar.Collapse if='basic-navbar-nav'>
-          <Nav className='me-auto.justify-content-end.w-100'>
-          <Nav.Link href='/' className='active text-uppercase text-black'>Home</Nav.Link>
-              <Nav.Link href='/Menu' className='text-uppercase text-black'>Menu</Nav.Link>
-              <Nav.Link href='/About' className='text-uppercase text-black'>About</Nav.Link>
-              <Nav.Link href='/Contact' className='text-uppercase text-black'>Contact</Nav.Link>
+          <Nav className='me-auto justify-content-end w-100'>
+          <Nav.Link as={Link} to='/' className='nav-link text-uppercase text-black'>Home</Nav.Link>
+              <Nav.Link as={Link} to='/menu' className='nav-link text-uppercase text-black'>Menu</Nav.Link>
+              <Nav.Link as={Link} to='/about' className='nav-link text-uppercase text-black'>About</Nav.Link>
+              <Nav.Link as={Link} to='/contact' className='nav-link text-uppercase text-black'>Contact</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
