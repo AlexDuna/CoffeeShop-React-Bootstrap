@@ -8,8 +8,8 @@ import { useState } from 'react';
 import * as Yup from 'yup';
 
 const validation = Yup.object().shape({
-    firstname: Yup.string().matches(/^[A-Za-z\-]+$/, 'First name must contain only letters').required('First name is required'),
-    lastname: Yup.string().matches(/^[A-Za-z\-]+$/, 'First name must contain only letters').required('Last name is required'),
+    firstname: Yup.string().matches(/^[A-Za-z-]+$/, 'First name must contain only letters').required('First name is required'),
+    lastname: Yup.string().matches(/^[A-Za-z-]+$/, 'First name must contain only letters').required('Last name is required'),
     emailaddress: Yup.string().email('Invalid email').required('Email is required'),
     phonenumber: Yup.string().matches(/^\d{10}$/, 'Invalid phone number').required('Phone number is required'),
     date: Yup.date().min(new Date(), 'Date must be later than today').required('Date is required'),

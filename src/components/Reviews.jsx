@@ -8,12 +8,8 @@ import Person3 from '../resources/images/Person3.jpg';
 import Person4 from '../resources/images/Person4.jpg';
 import Person5 from '../resources/images/Person5.jpg';
 import Person6 from '../resources/images/Person6.jpg';
-import { useState } from "react";
-
 
 export function Reviews(){
-
-    const [rating, setRating] = useState(0);
 
     return(
         <div className="reviews-section container">
