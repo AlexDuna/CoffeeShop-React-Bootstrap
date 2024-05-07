@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Menu from './pages/Menu';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <ScrollToTop/>
     <Routes>
       <Route path='/' element={<Home />}/>
       <Route path='/Menu' element={<Menu />}/>
