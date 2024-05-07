@@ -4,6 +4,7 @@ import { ContactInfo } from '../components/ContactInfo';
 import { Reviews } from '../components/Reviews';
 import { Form } from 'react-bootstrap';
 import { Formik, ErrorMessage } from 'formik';
+import { useState } from 'react';
 import * as Yup from 'yup';
 
 const validation = Yup.object().shape({
@@ -17,6 +18,9 @@ const validation = Yup.object().shape({
 });
 
 function Contact(){
+
+    const [showConfirmation, setShowConfirmation] = useState(false); // Starea pentru afișarea mesajului de confirmare
+
     return(
         <div className='contact-page'>
             <header className='mt-5'>
@@ -41,8 +45,19 @@ function Contact(){
                         comments: '',
                     }}
                     validationSchema={validation}
-                    onSubmit={(values) => {
+                    onSubmit={(values,{resetForm}) => {
+                        //Trimiterea datelor catre server, odata ce voi crea unul
                         console.log(values);
+                        //Resetarea formului odata ce datele valide au fost trimise catre server
+                        resetForm();
+
+                        // Afișarea mesajului de confirmare
+                        setShowConfirmation(true);
+
+                        // Ascunderea mesajului după 5 secunde
+                        setTimeout(() => {
+                            setShowConfirmation(false);
+                        }, 5000); // Ascunde mesajul după 5 secunde
                     }}>
                         {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
                         <Form onSubmit={handleSubmit}>
@@ -142,9 +157,6 @@ function Contact(){
                                             onBlur={handleBlur}
                                         />
                                         <ErrorMessage name='guestsnumber' component='div' className='text-danger' />
-                                        {values.guestsnumber && !errors.guestsnumber && (
-                                            <small className='text-success'>Alright</small>
-                                        )}
                                 </div>
                             </Form.Group>
                             <Form.Group className='mb-4'>
@@ -165,6 +177,14 @@ function Contact(){
                         </Form>
                         )}
                     </Formik>
+                    {/* Afișarea mesajului de submit daca toate datele au fost valide si submitul a fost efectuat*/}
+                    {showConfirmation && (
+                           <div className='text-center'>
+                                <div className='mt-3 alert alert-secondary text-success' role='alert'>
+                                    Your reservation has been successfully submitted.
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             

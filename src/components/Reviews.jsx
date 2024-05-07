@@ -1,15 +1,20 @@
 import React from "react";
 import {Card, CardBody, CardText, CardFooter, CardTitle } from 'react-bootstrap';
 import './Reviews.css';
+import RatingReview from "./RatingReview";
 import Person1 from '../resources/images/Person1.jpg';
 import Person2 from '../resources/images/Person2.jpg';
 import Person3 from '../resources/images/Person3.jpg';
 import Person4 from '../resources/images/Person4.jpg';
 import Person5 from '../resources/images/Person5.jpg';
 import Person6 from '../resources/images/Person6.jpg';
+import { useState } from "react";
 
 
 export function Reviews(){
+
+    const [rating, setRating] = useState(0);
+
     return(
         <div className="reviews-section container">
             <h2 className="text-center mb-5 text-uppercase fw-bold fs-1">Reviews</h2>
@@ -19,6 +24,7 @@ export function Reviews(){
                         <CardBody>
                             <div className="p-4">
                                 <CardText>
+                                <RatingReview rating={5} setRating={5} />
                                 <i>Atmosfera este minunată - relaxantă, primitoare și plină de farmec. Interiorul este frumos decorat, iar muzica ambientală creează o ambianță plăcută. Este locul perfect pentru a te bucura de o cafea în timp ce te relaxezi sau lucrezi.</i>
                                 </CardText>
                             </div>
@@ -34,6 +40,7 @@ export function Reviews(){
                         <CardBody>
                             <div className="p-4">
                                 <CardText>
+                                <RatingReview rating={5} setRating={5} />
                                 <i>Personalul este extrem de amabil, prompt și bine informat despre cafea. Au fost receptivi la preferințele noastre și ne-au oferit recomandări excelente. Comenzile au fost servite rapid și cu un zâmbet, ceea ce a făcut întreaga experiență plăcută și relaxantă.</i>
                                 </CardText>
                             </div>
@@ -49,6 +56,7 @@ export function Reviews(){
                         <CardBody>
                             <div className="p-4">
                                 <CardText>
+                                <RatingReview rating={5} setRating={5} />
                                 <i>Cafeaua este pur și simplu delicioasă! Am savurat un cappuccino perfect echilibrat și un latte cu o spumă bogată și arome intense. Boabele de cafea de specialitate prăjite local adaugă o notă distinctivă fiecărei băuturi. Este clar că se acordă o atenție deosebită calității cafelei.</i>
                                 </CardText>
                             </div>
@@ -64,6 +72,7 @@ export function Reviews(){
                         <CardBody>
                             <div className="p-4">
                                 <CardText>
+                                <RatingReview rating={5} setRating={5} />
                                 <i>Raportul calitate-preț este excelent. Prețurile sunt rezonabile pentru cafea de înaltă calitate și pentru atmosfera oferită. Este un loc unde primești cu adevărat valoare pentru fiecare leu cheltuit.</i>
                                 </CardText>
                             </div>
@@ -79,6 +88,7 @@ export function Reviews(){
                         <CardBody>
                             <div className="p-4">
                                 <CardText>
+                                <RatingReview rating={5} setRating={5} />
                                 <i>Am avut o experiență absolut fantastică la AstroCafe și nu pot să recomand acest loc suficient de mult!</i>
                                 </CardText>
                             </div>
@@ -94,6 +104,7 @@ export function Reviews(){
                         <CardBody>
                             <div className="p-4">
                                 <CardText>
+                                <RatingReview rating={5} setRating={5} />
                                 <i>AstroCafe este o bijuterie ascunsă în inima orașului și trebuie să spun că este una dintre cele mai plăcute descoperiri pe care le-am făcut în materie de cafenele!</i>
                                 </CardText>
                             </div>
