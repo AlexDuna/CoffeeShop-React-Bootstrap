@@ -7,6 +7,8 @@ import { ImageGallery } from '../components/ImageGallery';
 import { ContactInfo } from '../components/ContactInfo';
 import ContactImage from '../resources/images/contact-img.png';
 
+
+
 function Home(){
     return(
         <div className='home-page'>

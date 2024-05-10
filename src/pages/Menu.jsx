@@ -8,6 +8,7 @@ import TeaImg from '../resources/images/tea-img.jpg';
 import LemonadeImg from '../resources/images/lemonademenu-img.jpg';
 import SmoothieImg from '../resources/images/smoothiemenu-img.jpg';
 import MilkShakeImg from '../resources/images/milkshake-img.avif';
+import {useRef} from 'react';
 
 const blackcoffee = [
     {
@@ -224,38 +225,96 @@ const milkshake=[
     },
 ]
 
-function Menu(){
-    return(
 
+
+function Menu(){
+    const blackCoffeeRef = useRef(null);
+    const milkCoffeeRef = useRef(null);
+    const originalCoffeeRef = useRef(null);
+    const teaRef = useRef(null);
+    const lemonadeRef = useRef(null);
+    const smoothieRef = useRef(null);
+    const milkshakeRef = useRef(null);
+
+    const scrollToSection = (ref) => {
+        if (ref.current) {
+            window.scrollTo({
+                top: ref.current.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    const handleButtonClick = (ref) => {
+        scrollToSection(ref);
+    };
+
+    return(
         <div className='menu-page'>
             <header className='mt-5'>
                 <div className='container h-100 d-flex align-items-center justify-content-center'>
                     <h1 className='text-light'>Menu</h1>
                 </div>
             </header>
+            <div className='column'>
+                <div className='text-center'>
+                    <button className='btn btn-outline-dark btn-lg mt-3 mx-2 mb-1'
+                        onClick={() => handleButtonClick(blackCoffeeRef)}>
+                        Black Coffee
+                    </button>
+                    <button className='btn btn-outline-dark btn-lg mt-3 mx-2 mb-1'
+                        onClick={() => handleButtonClick(milkCoffeeRef)}>
+                        Milk Coffee
+                    </button>
+                    <button className='btn btn-outline-dark btn-lg mt-3 mx-2 mb-1'
+                        onClick={() => handleButtonClick(originalCoffeeRef)}>
+                        Original
+                    </button>
+                </div>
+            </div>
+            <div className='row'>
+                <div className='text-center'>
+                    <button className='btn btn-outline-dark btn-lg mt-3 mx-2 mb-1'
+                        onClick={() => handleButtonClick(teaRef)}>
+                        Tea
+                    </button>
+                    <button className='btn btn-outline-dark btn-lg mt-3 mx-2 mb-1'
+                        onClick={() => handleButtonClick(lemonadeRef)}>
+                        Lemonade
+                    </button>
+                    <button className='btn btn-outline-dark btn-lg mt-3 mx-2 mb-1'
+                        onClick={() => handleButtonClick(smoothieRef)}>
+                        Smoothies
+                    </button>
+                    <button className='btn btn-outline-dark btn-lg mt-3 mx-2 mb-1'
+                        onClick={() => handleButtonClick(milkshakeRef)}>
+                        Milkshakes
+                    </button>
+                </div>
+            </div>
 
-            <div className='blackcoffee my-5'>
+            <div ref={blackCoffeeRef} className='blackcoffee my-5'>
                 <div className='container'>
                     <h2 className='text-left fs-1 mb-4 mb-lg-5 text-uppercase fw-bold text-secondary'>Black Coffee</h2>
                     <div className='row flex-column-reverse flex-lg-row'>
                         <div className='col-lg-6 d-flex flex-column justify-content-around'>
                             {blackcoffee.map((blackcoffee)=> (
-                                <div key={blackcoffee.id}>
-                                    <Card className='border-1 border-secondary'>
-                                        <CardBody>
-                                            <CardTitle className='text-center fs-2 fw-bold'>
-                                                {blackcoffee.name}
-                                            </CardTitle>
-                                            <CardText className='text-center fs-5 text-secondary'>
-                                                {blackcoffee.description}
-                                            </CardText>
-                                            <CardText className='text-center fs-3 fw-bold text-success'>
-                                                {blackcoffee.price}
-                                            </CardText>
-                                        </CardBody>
-                                    </Card>
-                                </div>
-                            ))}
+                                    <div key={blackcoffee.id}>
+                                        <Card className='border-1 border-secondary'>
+                                            <CardBody>
+                                                <CardTitle className='text-center fs-2 fw-bold'>
+                                                    {blackcoffee.name}
+                                                </CardTitle>
+                                                <CardText className='text-center fs-5 text-secondary'>
+                                                    {blackcoffee.description}
+                                                </CardText>
+                                                <CardText className='text-center fs-3 fw-bold text-success'>
+                                                    {blackcoffee.price}
+                                                </CardText>
+                                            </CardBody>
+                                        </Card>
+                                    </div>
+                                ))}
                         </div>
                         <div className='col-lg-6 d-flex justify-content-left'>
                             <img src={BlackCoffeeImg} className='img-fluid mt-0 mt-lg-0' alt="" />
@@ -271,7 +330,7 @@ function Menu(){
                 borderColor: 'black',
                 height: '5px'}}/>
 
-            <div className='milkcoffee my-5'>
+            <div ref={milkCoffeeRef} className='milkcoffee my-5'>
                 <div className='container'>
                     <h2 className='text-left fs-1 mb-4 mb-lg-5 text-uppercase fw-bold text-secondary'>Milk Coffee</h2>
                     <div className='row flex-column-reverse flex-lg-row'>
@@ -308,7 +367,7 @@ function Menu(){
                 borderColor: 'black',
                 height: '5px'}}/>
 
-            <div className='originalcoffee my-5'>
+            <div ref={originalCoffeeRef} className='originalcoffee my-5'>
                 <div className='container'>
                     <h2 className='text-left fs-1 mb-4 mb-lg-5 text-uppercase fw-bold text-secondary'>Original Coffee</h2>
                     <div className='row flex-column-reverse flex-lg-row'>
@@ -345,7 +404,7 @@ function Menu(){
                 borderColor: 'black',
                 height: '5px'}}/>
 
-            <div className='tea my-5 bg'>
+            <div ref={teaRef} className='tea my-5 bg'>
                 <div className='container'>
                     <h2 className='text-left fs-1 mb-4 mb-lg-5 text-uppercase fw-bold text-secondary'>Tea</h2>
                     <div className='row flex-column-reverse flex-lg-row'>
@@ -382,7 +441,7 @@ function Menu(){
                 borderColor: 'black',
                 height: '5px'}}/>
 
-            <div className='lemonade my-5'>
+            <div ref={lemonadeRef} className='lemonade my-5'>
                 <div className='container'>
                     <h2 className='text-left fs-1 mb-4 mb-lg-5 text-uppercase fw-bold text-secondary'>Lemonade</h2>
                     <div className='row flex-column-reverse flex-lg-row'>
@@ -419,7 +478,7 @@ function Menu(){
                 borderColor: 'black',
                 height: '5px'}}/>
 
-            <div className='smoothie my-5'>
+            <div ref={smoothieRef} className='smoothie my-5'>
                 <div className='container'>
                     <h2 className='text-left fs-1 mb-4 mb-lg-5 text-uppercase fw-bold text-secondary'>Smoothies</h2>
                     <div className='row flex-column-reverse flex-lg-row'>
@@ -456,7 +515,7 @@ function Menu(){
                 borderColor: 'black',
                 height: '5px'}}/>
 
-            <div className='milkshake my-5'>
+            <div ref={milkshakeRef} className='milkshake my-5'>
                 <div className='container'>
                     <h2 className='text-left fs-1 mb-4 mb-lg-5 text-uppercase fw-bold text-secondary'>Milkshakes</h2>
                     <div className='row flex-column-reverse flex-lg-row'>
@@ -484,8 +543,7 @@ function Menu(){
                         </div>
                     </div>
                 </div>    
-            </div>
-
+            </div>          
         </div>
     )
 }
