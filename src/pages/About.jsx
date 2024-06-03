@@ -38,7 +38,7 @@ Echipa noastră este formată din barista pasionați și experimentați, mereu p
                         <img src={AboutBarman2} className='img-fluid my-4' alt="" />
                     </div>
                 </div>
-            <h2 className="text-center fs-5 mb-5"><i>-Hannelore Dan (barista))</i></h2>
+            <h2 className="text-center fs-5 mb-5"><i>-Hannelore Dan (barista)</i></h2>
             <p><i>"AstroCafe este mai mult decât un simplu coffee shop. Este un loc unde comunitatea se adună pentru a savura o cafea de calitate și pentru a petrece timp de calitate împreună. Atmosfera noastră este prietenoasă și relaxantă, perfectă pentru o întâlnire cu prietenii sau pentru a te bucura de puțin timp pentru tine.
 
             Îmi place să întâlnesc oameni noi și să le ofer o experiență de cafea de neuitat. Fie că îți place un espresso puternic, un latte cremos sau o cafea de filtru aromată, sunt aici să te ghidez și să te asigur că primești exact ce îți dorești."</i></p>
